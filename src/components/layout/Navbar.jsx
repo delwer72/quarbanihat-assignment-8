@@ -3,6 +3,10 @@ import { authClient } from "@/lib/auth-client";
 import { Avatar, Button } from "@heroui/react";
 import Image from "next/image";
 import Link from "next/link";
+import logo from "@/assets/qurbani.png";
+
+
+
 
 const Navbar = () => {
   const userData = authClient.useSession();
@@ -17,11 +21,11 @@ const Navbar = () => {
       <nav className=" flex justify-between items-center  py-3 max-w-7xl mx-auto w-full">
         <div className="flex gap-2 items-center">
           <Image
-            src={"/assets/quarbani.png"}
+            src={logo}
             alt="logo"
-            loading="eager"
             width={50}
             height={50}
+            priority
             className="object-cover h-auto w-auto"
           />
           <h3 className="font-black text-lg">Quarbani-HAT.</h3>
