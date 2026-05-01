@@ -5,6 +5,7 @@ import { FaDollarSign } from "react-icons/fa6";
 import { GiWeight } from "react-icons/gi";
 import { FaBirthdayCake } from "react-icons/fa";
 
+
 const AnimalCard = ({ animal }) => {
   return (
     <Card className="border rounded-xl p-3">
@@ -57,11 +58,11 @@ const AnimalCard = ({ animal }) => {
       </p>
 
       {/* Button */}
-      <Link href={`/all-animals/${animal.id}`}>
-        <Button variant="outline" className="w-full mt-3">
-          View Details
-        </Button>
-      </Link>
+ <Button asChild variant="outline" className="w-full mt-3">
+  <Link href={`/showallanimals/${animal.id}`}>
+    View Details
+  </Link>
+</Button>
     </Card>
   );
 };

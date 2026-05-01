@@ -36,7 +36,10 @@ const Navbar = () => {
             <Link className= "font-bold" href={"/"}>Home</Link>
           </li>
           <li>
-            <Link className= "font-bold" href={"/animals"}>All Animals</Link>
+            <Link className= "font-bold" href={"/showallanimals"}> Show All Animals</Link>
+          </li>
+          <li>
+            <Link className= "font-bold" href={"/profile"}> Profile</Link>
           </li>
         
         </ul>

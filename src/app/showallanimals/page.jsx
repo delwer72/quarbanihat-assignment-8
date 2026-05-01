@@ -1,17 +1,17 @@
-import AnimalCard from "./AnimalCard";
+import AnimalCard from "@/components/Home/AnimalCard";
 
-const AllAnimals = async () => {
+const ShowAllAnimals = async () => {
   const res = await fetch("https://a-8-quarbanihat.vercel.app/data.json");
   const animals = await res.json();
 
-  const topAnimals = animals.slice(0, 6); 
+  // const topAnimals = animals.slice(0, 6); 
 
   return (
     <div>
-      <h1 className="text-2xl font-bold my-5">Topper Animals</h1>
+      <h1 className="text-2xl font-bold my-5">All Animals</h1>
 
       <div className="grid grid-cols-3 gap-5">
-        {topAnimals.map((animal) => (
+        {animals.map((animal) => (
           <AnimalCard key={animal.id} animal={animal} />
         ))}
       </div>
@@ -19,4 +19,4 @@ const AllAnimals = async () => {
   );
 };
 
-export default AllAnimals;
+export default ShowAllAnimals;

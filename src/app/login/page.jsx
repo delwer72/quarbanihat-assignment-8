@@ -23,7 +23,7 @@ export default function LogInPage() {
     const { data, error } = await authClient.signIn.email({
       email,
       password,
-      callbackURL: "/",
+      callbackURL: "/register",
     });
 
     console.log({ data, error });
