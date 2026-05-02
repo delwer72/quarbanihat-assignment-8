@@ -1,7 +1,13 @@
 
 
+import Image from "next/image";
+import Link from "next/link";
+
+// import { toast } from "react-toastify";
+
+
 const DetailsPage = async ({ params }) => {
-  const { id } = params;
+  const { id } =await params;
 
   const res = await fetch("https://a-8-quarbanihat.vercel.app/data.json", {
     cache: "no-store",
@@ -9,18 +15,24 @@ const DetailsPage = async ({ params }) => {
 
   const data = await res.json();
 
-  const Animal = data.find((d) => d.id == id);
+  const Animal = data.find((item) => item.id === Number(id));
+  console.log(Animal)
+
+  
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 p-6">
       <div className="max-w-3xl w-full bg-white rounded-2xl shadow-lg overflow-hidden">
 
-        {/* Image
-        <img
-          src={Animal?.image}
-          alt={Animal?.name}
-          className="w-full h-80 object-cover"
-        /> */}
+
+       <div className="relative w-full h-80">
+  <Image
+    src={Animal.image}
+    fill
+    alt={Animal.name}
+    className="object-cover"
+  />
+</div>
 
         <div className="p-8 space-y-5">
 
@@ -53,10 +65,13 @@ const DetailsPage = async ({ params }) => {
             </span>
           </div>
 
-          {/* Button */}
-          <button className="w-full bg-green-600 text-white py-3 rounded-xl hover:bg-green-700 transition">
-            Buy Now
-          </button>
+        <Link href="/booking">
+  <button className="w-full bg-green-600 text-white py-3 rounded-xl hover:bg-green-700 transition">
+    BOOKING NOW
+  </button>
+</Link>
+
+         
 
         </div>
       </div>

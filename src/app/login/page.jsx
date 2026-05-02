@@ -29,7 +29,7 @@ export default function LogInPage() {
     console.log({ data, error });
   };
 
-  const handlGoogleSignIn = async () => {
+  const handleGoogleSignIn = async () => {
     await authClient.signIn.social({
         provider: 'google'
     })
@@ -99,7 +99,7 @@ export default function LogInPage() {
 
       <p className="text-center">Or</p>
 
-      <Button onClick={handlGoogleSignIn} variant="outline" className={'w-full'}><GrGoogle/> Sign In With Google</Button>
+      <Button onClick={handleGoogleSignIn} variant="outline" className={'w-full'}><GrGoogle/> Sign In With Google</Button>
     </Card>
   );
 }
