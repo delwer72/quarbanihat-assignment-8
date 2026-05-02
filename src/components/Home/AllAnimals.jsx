@@ -1,4 +1,5 @@
 import AnimalCard from "./AnimalCard";
+export const dynamic = 'force-dynamic'
 
 const AllAnimals = async () => {
   const res = await fetch("https://a-8-quarbanihat.vercel.app/data.json");
