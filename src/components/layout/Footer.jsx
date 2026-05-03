@@ -1,5 +1,10 @@
+
+
+"use client";
+
 import { Mail, MapPin, Phone } from "lucide-react";
 import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
+import "animate.css";
 
 export default function Footer() {
   return (
@@ -7,7 +12,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 py-12 grid gap-10 md:grid-cols-3">
 
         {/* About */}
-        <div>
+        <div className="animate__animated animate__fadeInUp">
           <h2 className="text-xl font-semibold mb-4">About</h2>
           <p className="text-black">
             Qurbani Hat is a trusted platform for buying and selling qurbani animals.
@@ -15,7 +20,7 @@ export default function Footer() {
         </div>
 
         {/* Contact */}
-        <div>
+        <div className="animate__animated animate__fadeInUp animate__delay-1s">
           <h2 className="text-xl font-semibold mb-4">Contact Info</h2>
           <ul className="space-y-3 text-gray-600">
             <li className="flex items-center gap-2">
@@ -31,19 +36,20 @@ export default function Footer() {
         </div>
 
         {/* Social */}
-        <div>
+        <div className="animate__animated animate__fadeInUp animate__delay-2s">
           <h2 className="text-xl font-semibold mb-4">Follow Us</h2>
 
           <div className="flex gap-4 text-2xl">
-            <FaFacebook />
-            <FaInstagram />
-            <FaLinkedin />
+            <FaFacebook className="hover:scale-110 transition duration-300 cursor-pointer" />
+            <FaInstagram className="hover:scale-110 transition duration-300 cursor-pointer" />
+            <FaLinkedin className="hover:scale-110 transition duration-300 cursor-pointer" />
           </div>
         </div>
 
       </div>
 
-      <div className="border-t py-4 text-center text-sm text-gray-500">
+      {/* Bottom */}
+      <div className="border-t py-4 text-center text-sm text-gray-500 animate__animated animate__fadeIn animate__delay-3s">
         © {new Date().getFullYear()} Qurbani Hat
       </div>
     </footer>
